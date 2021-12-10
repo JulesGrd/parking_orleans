@@ -1,3 +1,30 @@
 #map {
     height: 100vh;
 }
+
+#info-content {
+    background: aliceblue;
+    display: block;
+    width: 20%;
+    height: 300px;
+    position: fixed;
+    z-index: 100000;
+    right: 20px;
+    top: 0;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    box-shadow: 4px 3px 20px 5px #888888;
+    padding: 18px;
+}
+
+#info-content h2 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 38px;
+
+}
+
+#info-content p {
+    margin-bottom: 21px;
+}
