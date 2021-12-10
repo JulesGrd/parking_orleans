@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}tifhdsifj{% endblock %}
+
+{% block content %}
+<h1>{{ parking_id }}</h1>
+<script>
+    const url = "https://data.orleans-metropole.fr/api/records/1.0/search/?dataset=mobilite-places-disponibles-parkings-en-temps-reel&q={{ parking_id }}";
+
+    const request = new Request(url);
+    fetch(request)
+        .then(response => {
+            if (response.status === 200) {
+                return response.json();
+            } else {
+                throw new Error('Something went wrong on api server!');
+            }
+        })
+
+        .then(response => {
+            console.debug(response.records);
+            const name = response.records[0].fields.name;
+            document.querySelector('h1').innerText = name;
+
+            //Set title
+            document.title = name;
+        });
+
+
+</script>
+{% endblock %}
